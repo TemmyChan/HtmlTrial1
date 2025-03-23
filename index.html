@@ -6,15 +6,17 @@
     <title>音付きアラーム</title>
 </head>
 <body>
-    <button onclick="playAlarm()">アラーム音を鳴らす</button>
+    <button id="alarmButton">アラーム音を鳴らす</button>
 
     <audio id="alarmSound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
 
     <script>
-        function playAlarm() {
-            document.getElementById("alarmSound").play();
+        document.getElementById("alarmButton").addEventListener("click", function() {
+            const alarm = document.getElementById("alarmSound");
+            alarm.currentTime = 0; // 先頭から再生
+            alarm.play().catch(error => console.error("再生エラー:", error));
             alert("アラーム音が鳴りました！");
-        }
+        });
     </script>
 </body>
 </html>
