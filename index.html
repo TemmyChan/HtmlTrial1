@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音付きアラーム</title>
+</head>
+<body>
+    <button onclick="playAlarm()">アラーム音を鳴らす</button>
+
+    <audio id="alarmSound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
+
+    <script>
+        function playAlarm() {
+            document.getElementById("alarmSound").play();
+            alert("アラーム音が鳴りました！");
+        }
+    </script>
+</body>
+</html>
